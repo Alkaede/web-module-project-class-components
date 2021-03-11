@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import './components/Todo.css'
 
 const todoList = [
   {
@@ -43,7 +44,27 @@ class App extends React.Component {
     })
   }
 
+  clearHandler = () => {
+    this.setState({
+      list: this.state.list.filter(i => {
+        return !i.completed
+      })
+    })
+  }
 
+  toggleComplete = (iiD) => {
+    this.setState({
+      list: this.state.list.map(item => {
+        if(item.id === iiD){
+          return {
+            ...item,
+            completed: !item.completed
+          }
+        }
+        return item;
+      })
+    })
+  }
 
   render() {
     return (
@@ -51,9 +72,9 @@ class App extends React.Component {
         <div className='header'>
           <h2>ToDo List MVP:</h2>
         </div>
-        <TodoList todoList={this.state.list}/>
+        <TodoList todoList={this.state.list} clearComplete={this.clearHandler} toggleComplete={this.toggleComplete}/>
         {/* passing the addList to the form */}
-        <TodoForm addList={this.addList}/>
+        <TodoForm addList={this.addList} />
       </div>
     );
   }

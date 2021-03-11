@@ -18,6 +18,7 @@ class TodoForm extends React.Component{
     this.props.addList(this.state.todo);
   }
 
+
   render(){
     return (
       <form onSubmit={this.submitHandler}>
@@ -28,7 +29,7 @@ class TodoForm extends React.Component{
           onChange={this.changeHandler} 
           value={this.state.todo}
         />
-        <button>Add</button>
+        <button>Add Todo</button>
       </form>
     )
   }

@@ -1,0 +1,8 @@
+.item {
+  background-color: rgba(216, 117, 216, 0.747);
+  cursor: pointer;
+}
+
+.item.completed {
+  background-color: gray;
+}
