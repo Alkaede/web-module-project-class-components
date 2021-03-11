@@ -72,9 +72,9 @@ class App extends React.Component {
         <div className='header'>
           <h2>ToDo List MVP:</h2>
         </div>
-        <TodoList todoList={this.state.list} clearComplete={this.clearHandler} toggleComplete={this.toggleComplete}/>
         {/* passing the addList to the form */}
         <TodoForm addList={this.addList} />
+        <TodoList todoList={this.state.list} clearComplete={this.clearHandler} toggleComplete={this.toggleComplete}/>
       </div>
     );
   }

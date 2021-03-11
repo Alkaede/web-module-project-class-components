@@ -9,6 +9,7 @@ const TodoList = props => {
       {props.todoList.map(item => (
         <List key={item.id} todo={item} toggleComplete={props.toggleComplete}/>
       ))}
+      {/* watch for spelling errors! */}
       <button onClick={props.clearComplete}>
         Clear Completed
         </button>
