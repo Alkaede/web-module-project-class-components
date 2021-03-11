@@ -2,8 +2,8 @@ import React from 'react';
 
 const List = props => {
   return(
-    <div className={`item${props.item.completed? ' completed' : ''}`}>
-      <p>{props.item.task}</p>
+    <div className={`item${props.todo.completed? ' completed' : ''}`}>
+      <p>{props.todo.task}</p>
     </div>
   )
 }
